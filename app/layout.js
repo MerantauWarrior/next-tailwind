@@ -17,7 +17,7 @@ export default function RootLayout({children}) {
     <body className={inter.className}>
       <div className="w-full h-full flex flex-col">
         <Header/>
-        <main className={"grow overflow-x-hidden overflow-y-auto"}>
+        <main className={"grow overflow-x-hidden overflow-y-auto overscroll-none"}>
           <div className={"container mx-auto px-4 py-6"}>{children}</div>
         </main>
         <Footer/>
