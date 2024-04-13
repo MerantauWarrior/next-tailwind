@@ -1,3 +1,5 @@
+import { ThemeProvider } from 'next-themes'
+
 import {Inter} from 'next/font/google'
 import './globals.css'
 import React from "react";
@@ -13,15 +15,21 @@ export const metadata = {
 
 export default function RootLayout({children}) {
   return (
-    <html lang="en">
+    <html lang="en" suppressHydrationWarning>
     <body className={inter.className}>
-      <div className="w-full h-full flex flex-col">
+    <ThemeProvider
+      attribute="class"
+      defaultTheme="light"
+      enableSystem={true}
+    >
+      <div className="w-full h-full flex flex-col text-black dark:text-white">
         <Header/>
         <main className={"grow overflow-x-hidden overflow-y-auto overscroll-none"}>
           <div className={"container mx-auto px-4 py-6"}>{children}</div>
         </main>
         <Footer/>
       </div>
+    </ThemeProvider>
     </body>
     </html>
   )
