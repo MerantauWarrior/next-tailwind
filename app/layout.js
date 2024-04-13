@@ -15,17 +15,17 @@ export const metadata = {
 
 export default function RootLayout({children}) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="en" suppressHydrationWarning className={"scroll-smooth antialiased"}>
     <body className={inter.className}>
     <ThemeProvider
       attribute="class"
       defaultTheme="light"
       enableSystem={true}
     >
-      <div className="w-full h-full flex flex-col text-black dark:text-white">
+      <div className="size-full flex flex-col text-black dark:text-white">
         <Header/>
         <main className={"grow overflow-x-hidden overflow-y-auto overscroll-none"}>
-          <div className={"container mx-auto px-4 py-6"}>{children}</div>
+          <div className={"container mx-auto px-4 py-4"}>{children}</div>
         </main>
         <Footer/>
       </div>

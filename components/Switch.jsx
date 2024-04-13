@@ -1,10 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import {useTheme} from 'next-themes';
 
-const styles = "h-4 w-4 text-gray-600 dark:text-gray-300";
-
 export default function Switch() {
-
   const {theme, setTheme} = useTheme();
   const [mounted, setMounted] = useState(false);
   useEffect(() => setMounted(true), []);

@@ -1,12 +1,14 @@
 'use client'
 import React from 'react';
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 
 const Footer = () => {
+  const pathname = usePathname()
   return (
     <footer className={"bg-slate-300 dark:bg-gray-800"}>
       <div id="tabs" className="flex justify-between">
-        <Link href="/" className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+        <Link href="/" className={`w-full hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1 ${pathname === '/' ? 'text-teal-500' : ''}`}>
           <svg width="25" height="25" viewBox="0 0 42 42" className="inline-block mb-1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <path
@@ -28,7 +30,7 @@ const Footer = () => {
           </svg>
           <span className="tab tab-home block text-xs">Home</span>
         </Link>
-        <Link href="/category" className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+        <Link href="/category" className={`w-full hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1 ${pathname === '/category' ? 'text-teal-500' : ''}`}>
           <svg width="25" height="25" viewBox="0 0 42 42" className="inline-block mb-1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <path
@@ -54,7 +56,7 @@ const Footer = () => {
           </svg>
           <span className="tab tab-kategori block text-xs">Category</span>
         </Link>
-        <Link href="/account" className="w-full focus:text-teal-500 hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1">
+        <Link href="/account" className={`w-full hover:text-teal-500 justify-center inline-block text-center pt-2 pb-1 ${pathname === '/account' ? 'text-teal-500' : ''}`}>
           <svg width="25" height="25" viewBox="0 0 42 42" className="inline-block mb-1">
             <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
               <path
