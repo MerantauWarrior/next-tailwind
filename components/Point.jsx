@@ -10,7 +10,9 @@ const Point = () => {
   return (
     <motion.div
       ref={ref}
-      className="w-12 h-12 rounded-full bg-black dark:bg-white"
+      whileHover={{ scale: 1.25 }}
+      whileTap={{ scale: 0.75 }}
+      className="w-16 h-16 rounded-full bg-black dark:bg-white"
       animate={{ x, y }}
       transition={{
         type: "spring",
